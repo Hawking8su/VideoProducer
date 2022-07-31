@@ -88,8 +88,8 @@ def vf_zoom_move(in_file="", out_file="", out_size=(0, 0), point_start=(0, 0), p
     vf_str = f'''
         scale={upscale},
         zoompan=
-            x='{point_start[0]}*{scale_ratio}/zoom+(on/({move_frame_rate}))*(({point_end[0] - point_start[0]})*{scale_ratio}*(1-1/zoom)):
-            y='{point_start[1]}*{scale_ratio}/zoom+(on/({move_frame_rate}))*(({point_end[1] - point_start[1]})*{scale_ratio}*(1-1/zoom))':
+            x='({point_start[0]}+(on/{move_frame_rate})*({point_end[0] - point_start[0]}))*{scale_ratio}*(1-1/zoom):
+            y='({point_start[1]}+(on/{move_frame_rate})*({point_end[1] - point_start[1]}))*{scale_ratio}*(1-1/zoom)':
             z='{z_effect}':
             d={frame_rate}:
             s={out_scale}
@@ -146,7 +146,7 @@ if __name__ == '__main__':
     out_file2 = "./out/{}_move1.mp4".format(in_filename_base)
     point_a = (1489, 278)
     point_b = (467, 371)
-    z_multi = 2.5
+    z_multi = 2.8
     time = 4
     move_speed = 1
 
@@ -176,8 +176,8 @@ if __name__ == '__main__':
     # step4: move from point B to point C
     out_file5 = "./out/{}_move2.mp4".format(in_filename_base)
     point_a = (467, 371)
-    point_b = (1074, 580)
-    z_multi = 2.5
+    point_b = (1274, 580)
+    z_multi = 2.8
     time = 4
     move_speed = 1
 
@@ -200,4 +200,5 @@ if __name__ == '__main__':
     cmd_output = cmd_execute(ff_cmd)
     print(cmd_output)
     # todo: remove middle video and image files
+    # todo: edge handle -- done
     print("Done!")
