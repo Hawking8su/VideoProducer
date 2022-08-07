@@ -17,10 +17,23 @@ Key questions:
 
 Ideas on making videos:
 1. 制作卡点视频：使用librosa库：music + audio analysis
-    - [librosa](https://github.com/librosa/librosa)
-    - [会跳舞的小球](https://www.bilibili.com/video/BV1qR4y1g7yD/)
+   1. [librosa](https://github.com/librosa/librosa)
+   2. [会跳舞的小球](https://www.bilibili.com/video/BV1qR4y1g7yD/)
+   3. 学习如何制作卡点视频
 
 2. 制作卡点动画
+   1. python visualize music
+   
+3. 学习使用视频剪辑App：
+   1. 了解视频 基本的元素
+   2. 手工模仿制作一个剪辑视频
+
+
+
+## Reference links:
+
+1. [音视频开发-学习笔记](https://www.zhihu.com/column/c_1287080741293801472)
+2. [ffmpeg音视频处理](https://coco723.github.io/blog/article/Tools/ffmpeg%E9%9F%B3%E8%A7%86%E9%A2%91%E5%A4%84%E7%90%86.html#%E5%8E%BB%E9%99%A4%E9%9F%B3%E8%A7%86%E9%A2%91%E4%B8%AD%E7%9A%84%E8%A7%86%E9%A2%91)
 
 ## Useful Tools:
 
