@@ -8,8 +8,8 @@ import os
 from PIL import Image
 
 
-def make_ffmpeg_cmd(in_file, out_file, vf_str):
-    return "ffmpeg -y -i {0} -vf \"{2}\" -pix_fmt yuv420p -c:v libx264 {1}".format(in_file, out_file, vf_str)
+# def make_ffmpeg_cmd(in_file, out_file, vf_str):
+#     return "ffmpeg -y -i {0} -vf \"{2}\" -pix_fmt yuv420p -c:v libx264 {1}".format(in_file, out_file, vf_str)
 
 
 def cmd_execute(cmd_str=""):
@@ -26,10 +26,10 @@ def cmd_execute(cmd_str=""):
 # make zoompan filter
 # input: image size (width, height), (x,y), z, time
 # default: output size = input size, duration = 25fps * time, scale=-2:10*ih
-def vf_zoom(image_size=(0, 0), z_point=(0, 0), z_effect='', time=0):
+def vf_zoom(in_file="", out_file="", image_size=(0, 0), z_point=(0, 0), z_effect='', time=0):
     # ffplay -i liuyifei_3.jpg -vf "scale=-2:10*ih,zoompan=x='(iw-iw/zoom)*(475/640)':y='(ih-ih/zoom)*(125/359)':z='zoom+0.010':d=25*4:s=640x359"
 
-    return "scale=-2:10*ih,zoompan=x='(iw-iw/zoom)*({0}/{2})':y='(ih-ih/zoom)*({1}/{3})':z='{4}':d=25*{5}:s={2}x{3}".format(
+    vf_str = "scale=-2:10*ih,zoompan=x='(iw-iw/zoom)*({0}/{2})':y='(ih-ih/zoom)*({1}/{3})':z='{4}':d=25*{5}:s={2}x{3}".format(
         z_point[0],
         z_point[1],
         image_size[0],
@@ -37,6 +37,8 @@ def vf_zoom(image_size=(0, 0), z_point=(0, 0), z_effect='', time=0):
         z_effect,
         time
     )
+    return "ffmpeg -y -i {0} -vf \"{2}\" -pix_fmt yuv420p -c:v libx264 {1}".format(in_file, out_file, vf_str)
+
 
 
 # todo
