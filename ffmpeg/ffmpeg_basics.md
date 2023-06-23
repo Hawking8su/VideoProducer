@@ -2,7 +2,6 @@
 
 # FFmpeg 基础
 
-
 FFmpeg官网： https://ffmpeg.org/
 
 ## 1 什么是FFmpeg?
@@ -36,7 +35,7 @@ ffmpeg {1} {2} -i {3} {4} {5}
 命令样例：
 ```bash
 # 将一个图片转换为一个5秒的视频
-ffmpeg -y -framerate 25 -loop 1 -i img.jpg -c:v libx264 -t 5 -pix_fmt yuv420p out.mp4
+
 
 # 解析
 ffmpeg

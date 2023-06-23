@@ -26,3 +26,4 @@ size = (basewidth, hsize)
 img = img.resize(size, Image.ANTIALIAS)
 
 img.save('resized_image1.jpg')
+
